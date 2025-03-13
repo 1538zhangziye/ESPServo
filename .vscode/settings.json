@@ -1,0 +1,24 @@
+{
+    "C_Cpp.intelliSenseEngine": "default",
+    "idf.adapterTargetName": "esp32",
+    "idf.customExtraPaths": "D:\\software\\Espressif\\tools\\xtensa-esp-elf-gdb\\14.2_20240403\\xtensa-esp-elf-gdb\\bin;D:\\software\\Espressif\\tools\\riscv32-esp-elf-gdb\\14.2_20240403\\riscv32-esp-elf-gdb\\bin;D:\\software\\Espressif\\tools\\xtensa-esp-elf\\esp-13.2.0_20230928\\xtensa-esp-elf\\bin;D:\\software\\Espressif\\tools\\riscv32-esp-elf\\esp-13.2.0_20230928\\riscv32-esp-elf\\bin;D:\\software\\Espressif\\tools\\esp32ulp-elf\\2.35_20220830\\esp32ulp-elf\\bin;D:\\software\\Espressif\\tools\\cmake\\3.24.0\\bin;D:\\software\\Espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20240318\\openocd-esp32\\bin;D:\\software\\Espressif\\tools\\ninja\\1.11.1;D:\\software\\Espressif\\tools\\idf-exe\\1.0.3;D:\\software\\Espressif\\tools\\ccache\\4.8\\ccache-4.8-windows-x86_64;D:\\software\\Espressif\\tools\\dfu-util\\0.11\\dfu-util-0.11-win64;D:\\software\\Espressif\\tools\\esp-rom-elfs\\20230320",
+    "idf.customExtraVars": {
+        "OPENOCD_SCRIPTS": "D:\\software\\Espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20240318/openocd-esp32/share/openocd/scripts",
+        "IDF_CCACHE_ENABLE": "1",
+        "ESP_ROM_ELF_DIR": "D:\\software\\Espressif\\tools\\esp-rom-elfs\\20230320/",
+        "IDF_TARGET": "esp32s3"
+    },
+    "idf.espIdfPathWin": "D:/software/Espressif/frameworks/esp-idf-v5.4/",
+    "idf.openOcdConfigs": [
+        "board/esp32s3-builtin.cfg"
+    ],
+    "idf.portWin": "COM6",
+    "idf.pythonBinPathWin": "D:\\software\\Espressif\\python_env\\idf5.2_py3.11_env\\Scripts\\python.exe",
+    "idf.toolsPathWin": "D:\\software\\Espressif",
+    "idf.flashType": "UART",
+    "idf.pythonInstallPath": "D:\\software\\Espressif\\tools\\idf-python\\3.11.2\\python.exe",
+    "files.associations": {
+        "i2c_slave.h": "c",
+        "i2c_master.h": "c"
+    }
+}
