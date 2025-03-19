@@ -19,7 +19,7 @@ void PWMServoDriver_setPWMFreq(i2c_master_dev_handle_t dev_handle, float freq)
     if (freq > 3500)
         freq = 3500;
 
-    float prescaleval = (25000000.0 / (freq * 4096.0)) - 1;
+    float prescaleval = (30000000.0 / (freq * 4096.0)) - 1;
     if (prescaleval < 3)
         prescaleval = 3;
     if (prescaleval > 255)
@@ -42,7 +42,7 @@ void PWMServoDriver_setPWMFreq(i2c_master_dev_handle_t dev_handle, float freq)
 
 void PWMServoDriver_setPWM(i2c_master_dev_handle_t dev_handle, uint8_t num, uint16_t on, uint16_t off)
 {
-    printf("setPWM: %d %d %d\n", num, on, off);
+    //printf("setPWM: %d %d %d\n", num, on, off);
 
     // 计算寄存器地址
     uint8_t on_low = (uint8_t)(on & 0xFF);
@@ -61,7 +61,8 @@ void PWMServoDriver_setPWM(i2c_master_dev_handle_t dev_handle, uint8_t num, uint
 
 void PWMServoDriver_setPin(i2c_master_dev_handle_t dev_handle, uint8_t num, float angle)
 {
-    uint16_t val = (uint16_t)(angle * 490 / 180.0 + 127); // 0.5ms ~ 2.5ms  127 ~ 617
+    // uint16_t val = (uint16_t)(angle * 409.6 / 180.0 + 101.4); // 0.5ms ~ 2.5ms
+    uint16_t val = (uint16_t)(angle * 385 / 180.0 + 97); // 0.5ms ~ 2.5ms
     val = val > 4095 ? 4095 : val;
     PWMServoDriver_setPWM(dev_handle, num, 0, val);
 }

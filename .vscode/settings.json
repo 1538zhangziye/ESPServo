@@ -12,13 +12,14 @@
     "idf.openOcdConfigs": [
         "board/esp32s3-builtin.cfg"
     ],
-    "idf.portWin": "COM6",
+    "idf.portWin": "COM5",
     "idf.pythonBinPathWin": "D:\\software\\Espressif\\python_env\\idf5.2_py3.11_env\\Scripts\\python.exe",
     "idf.toolsPathWin": "D:\\software\\Espressif",
     "idf.flashType": "UART",
     "idf.pythonInstallPath": "D:\\software\\Espressif\\tools\\idf-python\\3.11.2\\python.exe",
     "files.associations": {
         "i2c_slave.h": "c",
-        "i2c_master.h": "c"
+        "i2c_master.h": "c",
+        "gpio.h": "c"
     }
 }

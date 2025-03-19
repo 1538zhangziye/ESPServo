@@ -1,15 +1,15 @@
 #include "driver/i2c_master.h"
 #include "PWMServoDriver.h"
 #include "esp_log.h"
-
-void app_main()
+#include "uart.c"
+void app_main_()
 {
     printf("Hello world!\n");
     // 初始化 I2C 主机
     i2c_master_bus_config_t bus_config = {
         .i2c_port = I2C_NUM_0,
-        .sda_io_num = GPIO_NUM_20,
-        .scl_io_num = GPIO_NUM_21,
+        .sda_io_num = GPIO_NUM_18,
+        .scl_io_num = GPIO_NUM_17,
         .clk_source = I2C_CLK_SRC_DEFAULT,
         .glitch_ignore_cnt = 7,
         .flags.enable_internal_pullup = true,
@@ -28,14 +28,19 @@ void app_main()
     // 设置 PWM 频率
     PWMServoDriver_setPWMFreq(dev_handle, 50); // 50 Hz for servo
 
+    //xTaskCreate(uart_task, "uart_echo_task", 4096, NULL, 10, NULL); // 创建 UART 任务
+
     // 控制舵机角度
     while (1)
     {
-        for(int i = 0; i < 10; i++)
-            PWMServoDriver_setPin(dev_handle, i, 80);
+        for (int i = 0; i < 1; i++)
+            PWMServoDriver_setPin(dev_handle, i, 0);
         vTaskDelay(pdMS_TO_TICKS(1000)); // 稍作延迟
-        for(int i = 0; i < 10; i++)
-            PWMServoDriver_setPin(dev_handle, i, 100);
+        for (int i = 0; i < 1; i++)
+            PWMServoDriver_setPin(dev_handle, i, 90);
+        vTaskDelay(pdMS_TO_TICKS(1000)); // 稍作延迟
+        for (int i = 0; i < 1; i++)
+            PWMServoDriver_setPin(dev_handle, i, 180);
         vTaskDelay(pdMS_TO_TICKS(1000)); // 稍作延迟
     }
 }
